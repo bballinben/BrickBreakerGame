@@ -68,6 +68,18 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
         g.setColor(Color.yellow);
         g.fillOval(ballposX, ballposY, 20, 20);
         
+        if(ballposY > 570) {
+            play = false;
+            ballXdir = 0;
+            ballYdir = 0;
+            g.setColor(Color.red);
+            g.setFont(new Font("serif", Font.BOLD, 30));
+            g.drawString("Game Over", 240, 300);
+            
+            g.setFont(new Font("serif", Font.BOLD, 20));
+            g.drawString("Press Enter to Restart", 230, 350);
+        }
+        
         g.dispose();
     }
     
